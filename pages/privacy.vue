@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Index</p>
+    <p>privacy policy</p>
   </div>
 </template>
 
