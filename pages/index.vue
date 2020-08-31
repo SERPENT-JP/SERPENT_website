@@ -72,11 +72,15 @@
     position: relative;
     font-family: "David Libre", serif;
     font-family: "Domine", serif;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .to-about:hover {
     background-color: rgb(125, 215, 231);
     color: black;
     text-decoration: none;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        5px 5px 5px rgba(0, 0, 0, 0.22);
 }
 .to-about-img {
     position: absolute;
