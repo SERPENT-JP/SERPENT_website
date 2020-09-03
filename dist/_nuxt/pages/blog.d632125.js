@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{232:function(n,t,e){"use strict";e.r(t);var l=e(31),component=Object(l.a)({},(function(){var n=this.$createElement;return(this._self._c||n)("div",[this._v("\n  ブログが実装次第飛べます。\n")])}),[],!1,null,null,null);t.default=component.exports}}]);
