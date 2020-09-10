@@ -7,6 +7,7 @@
           <li><nuxt-link to="/member">Member</nuxt-link></li>
           <li><nuxt-link to="/news">News</nuxt-link></li>
           <li><nuxt-link to="/blog">Blog</nuxt-link></li>
+          <li><nuxt-link to="/contact">Contact</nuxt-link></li>
           <li><nuxt-link to="/privacy">Privacy Policy</nuxt-link></li>
         </ul>
       </nav>
@@ -54,7 +55,7 @@
     justify-content: space-between;
   }
   .wrapper {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 4%;
   }
