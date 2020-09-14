@@ -56,7 +56,8 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     '@nuxtjs/markdownit',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/moment',
   ],
   markdownit: {
     preset: 'default',
@@ -69,6 +70,9 @@ export default {
     langPrefix: 'language-',
     quotes: '“”‘’',
     highlight: function (/*str, lang*/) { return ''; },
+  },
+  moment: {
+    locales: ['ja']
   },
   /*
   ** Build configuration

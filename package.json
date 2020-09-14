@@ -12,8 +12,11 @@
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/markdownit": "^1.2.10",
     "bootstrap": "^4.5.0",
-    "bootstrap-vue": "^2.15.0",
+    "bootstrap-vue": "^2.16.0",
+    "moment": "^2.27.0",
     "nuxt": "^2.14.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxtjs/moment": "^1.6.1"
+  }
 }

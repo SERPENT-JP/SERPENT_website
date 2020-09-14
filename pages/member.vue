@@ -3,7 +3,10 @@
         <h1 class="member-title">Member List</h1>
         <div style="list-style:none">
             <li>
-                <ul v-for="item in list" :key="item.id">
+                <ul
+                    v-for="(item, index) in list.slice(perPage * (currentPage - 1), perPage * currentPage)"
+                    :key="index"
+                >
                     <div class="author-box">
                         <div class="icon-outer">
                             <img :src="item.icon" class="icon" />
@@ -196,6 +199,16 @@
                     <hr />
                 </ul>
             </li>
+            <b-pagination
+                :total-rows="rows"
+                v-model="currentPage"
+                :per-page="perPage"
+                :items="list"
+                aria-controls="my-list"
+                class="page-nation"
+                small
+                align="center"
+            ></b-pagination>
         </div>
     </div>
 </template>
@@ -204,8 +217,10 @@
 import axios from "axios";
 
 export default {
-    data() {
+    data: () => {
         return {
+            currentPage: 1,
+            perPage: 5,
             list: [],
         };
     },
@@ -213,6 +228,11 @@ export default {
         axios
             .get("https://serpent.pythonanywhere.com/api/author/")
             .then((response) => (this.list = response.data));
+    },
+    computed: {
+        rows() {
+            return this.list.length;
+        },
     },
 };
 </script>
@@ -224,15 +244,17 @@ export default {
 .member-title {
     text-align: center;
     margin: 50px 0;
+    font-size: 50px;
     font-family: "Domine", serif;
 }
 .author-box {
     display: flex;
 }
 .author-box-detail {
-    padding-left: 20px;
-    margin-right: 5%;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    margin: 0 5%;
     min-width: 0;
+    width: 90%;
 }
 .icon-outer {
     max-width: 300px;
@@ -244,6 +266,7 @@ export default {
     border-radius: 100%;
     width: 100%;
     height: 100%;
+    box-shadow: 0 20px 30px #00000022, 0 6px 10px #00000022;
 }
 .role {
     position: absolute;
@@ -283,6 +306,7 @@ export default {
     line-height: 26px;
     padding: 5px;
     border-radius: 5px;
+    box-shadow: 0 5px 10px #00000022, 0 6px 6px #00000022;
 }
 .btn:hover {
     text-decoration: none;
@@ -395,8 +419,7 @@ export default {
     padding: 1em;
     border-radius: 3px;
     cursor: pointer;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
-        0 3px 1px -2px rgba(51, 51, 51, 0.2);
+    box-shadow: 0 10px 20px #00000022, 0 6px 6px #00000022;
     -webkit-tap-highlight-color: transparent;
     transition: 0.3s ease-out;
     font-weight: bold;
