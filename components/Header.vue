@@ -170,7 +170,7 @@ li {
 .menu-trigger {
     display: none;
     position: relative;
-    width: 50px;
+    min-width: 50px;
     height: 44px;
     margin: 25px;
 }

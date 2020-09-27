@@ -1,10 +1,13 @@
 <template>
     <div class="news-outer">
         <h1 class="news-title">News</h1>
-        <div style="list-style:none">
+        <div style="list-style: none;">
             <li id="my-list">
                 <ul
-                    v-for="(item, index) in reverceList.slice(perPage * (currentPage - 1), perPage * currentPage)"
+                    v-for="(item, index) in reverceList.slice(
+                        perPage * (currentPage - 1),
+                        perPage * currentPage
+                    )"
                     :key="index"
                 >
                     <div class="news-card">
@@ -15,8 +18,10 @@
                         />
                         <div class="news-message">
                             <h2 class="news-message-title">
+                                <span class="date">{{
+                                    item.created_at | moment
+                                }}</span>
                                 {{ item.title }}
-                                <span class="date">{{ item.created_at | moment }}</span>
                             </h2>
                             <hr />
                             <p v-html="$md.render(item.content)"></p>
@@ -83,7 +88,6 @@ export default {
 }
 .news-card {
     display: flex;
-    height: 200px;
 }
 .news-message {
     font-family: "M PLUS Rounded 1c", sans-serif;
@@ -98,6 +102,7 @@ export default {
 }
 .news-thubnail {
     width: 300px;
+    height: 200px;
 }
 .date {
     position: absolute;
@@ -107,5 +112,50 @@ export default {
     color: white;
     padding: 5px;
     border-radius: 5px;
+}
+@media (max-width: 1300px) {
+}
+@media (max-width: 1000px) {
+    .news-outer {
+        padding: 0 3%;
+    }
+    .news-message {
+        padding-right: 0;
+    }
+    .news-thubnail {
+        width: 200px;
+        height: 150px;
+    }
+}
+@media (max-width: 800px) {
+    .news-card {
+        flex-direction: column;
+    }
+    .news-thubnail {
+        width: 150px;
+        height: 100px;
+        margin: auto;
+    }
+    .date {
+        padding: 2px;
+        font-size: 12px;
+        top: -110px;
+        left: 0;
+        right: auto;
+    }
+    .news-message {
+        width: 100%;
+    }
+    .news-message-title {
+        padding: 0;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .news-message p {
+        font-size: 12px;
+    }
+    ul {
+        padding: 0;
+    }
 }
 </style>

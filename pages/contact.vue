@@ -148,4 +148,13 @@ input,
 textarea {
     width: 100%;
 }
+@media (max-width: 1000px) {
+    .page-title {
+        font-size: 50px;
+    }
+    #app {
+        margin: 0;
+        width: 100%;
+    }
+}
 </style>

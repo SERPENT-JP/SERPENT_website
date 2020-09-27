@@ -102,6 +102,14 @@
     }
     .index-right {
         width: 100%;
+        background: linear-gradient(
+            150.46deg,
+            rgba(242, 182, 182, 0.8) 0%,
+            rgba(182, 228, 242, 0.8) 100%
+        );
+    }
+    .index-message {
+        margin-top: 100px;
     }
     .index-message > h1 {
         font-size: 50px;
