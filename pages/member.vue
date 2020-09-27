@@ -1,29 +1,52 @@
 <template>
     <div class="member-outer">
         <h1 class="member-title">Member List</h1>
-        <div style="list-style:none">
+        <div style="list-style: none;">
             <li>
                 <ul
-                    v-for="(item, index) in list.slice(perPage * (currentPage - 1), perPage * currentPage)"
+                    v-for="(item, index) in list.slice(
+                        perPage * (currentPage - 1),
+                        perPage * currentPage
+                    )"
                     :key="index"
                 >
                     <div class="author-box">
-                        <div class="icon-outer">
+                        <div class="icon-outer-pc">
                             <img :src="item.icon" class="icon" />
                         </div>
                         <div class="author-box-detail">
                             <div class="name-box">
+                                <div class="icon-outer-mobile">
+                                    <img :src="item.icon" class="icon" />
+                                </div>
                                 <span class="name">{{ item.name }}</span>
                                 <span
                                     v-if="item.role == 'オーナー'"
                                     class="role-owner role"
-                                >{{ item.role }}</span>
-                                <span v-if="item.role == '１期生'" class="role-1 role">{{ item.role }}</span>
-                                <span v-if="item.role == '２期生'" class="role-2 role">{{ item.role }}</span>
-                                <span v-if="item.role == '３期生'" class="role-3 role">{{ item.role }}</span>
-                                <span v-if="item.role == '４期生'" class="role-4 role">{{ item.role }}</span>
+                                    >{{ item.role }}</span
+                                >
+                                <span
+                                    v-if="item.role == '１期生'"
+                                    class="role-1 role"
+                                    >{{ item.role }}</span
+                                >
+                                <span
+                                    v-if="item.role == '２期生'"
+                                    class="role-2 role"
+                                    >{{ item.role }}</span
+                                >
+                                <span
+                                    v-if="item.role == '３期生'"
+                                    class="role-3 role"
+                                    >{{ item.role }}</span
+                                >
+                                <span
+                                    v-if="item.role == '４期生'"
+                                    class="role-4 role"
+                                    >{{ item.role }}</span
+                                >
                             </div>
-                            <hr />
+                            <hr class="hr" />
                             <p>{{ item.description }}</p>
                             <div class="meta-box">
                                 <div class="meta-box-inner">
@@ -47,7 +70,10 @@
                                     </a>
                                     <a
                                         class="twitter-button btn"
-                                        v-bind:href="'https://twitter.com/' + item.TwitterID"
+                                        v-bind:href="
+                                            'https://twitter.com/' +
+                                            item.TwitterID
+                                        "
                                         v-if="item.TwitterID"
                                     >
                                         <svg
@@ -65,7 +91,10 @@
                                     </a>
                                     <a
                                         class="instagram-button btn"
-                                        v-bind:href="'https://instagram.com/' + item.InstagramID"
+                                        v-bind:href="
+                                            'https://instagram.com/' +
+                                            item.InstagramID
+                                        "
                                         v-if="item.InstagramID"
                                     >
                                         <svg
@@ -83,7 +112,9 @@
                                     </a>
                                     <a
                                         class="github-button btn"
-                                        v-bind:href="'https://github.com/' + item.GitID"
+                                        v-bind:href="
+                                            'https://github.com/' + item.GitID
+                                        "
                                         v-if="item.GitID"
                                     >
                                         <svg
@@ -101,7 +132,9 @@
                                     </a>
                                     <a
                                         class="qitta-button btn"
-                                        v-bind:href="'https://qiita.com/' + item.QittaID"
+                                        v-bind:href="
+                                            'https://qiita.com/' + item.QittaID
+                                        "
                                         v-if="item.QittaID"
                                     >
                                         <svg
@@ -118,7 +151,9 @@
                                     </a>
                                     <a
                                         class="note-button btn"
-                                        v-bind:href="'https://note.com/' + item.NoteID"
+                                        v-bind:href="
+                                            'https://note.com/' + item.NoteID
+                                        "
                                         v-if="item.NoteID"
                                     >
                                         <svg
@@ -165,7 +200,9 @@
                                     </a>
                                     <a
                                         class="mailadress btn"
-                                        v-bind:href="'mailto:' + item.MailAdress"
+                                        v-bind:href="
+                                            'mailto:' + item.MailAdress
+                                        "
                                         v-if="item.MailAdress"
                                     >
                                         <svg
@@ -191,8 +228,12 @@
                                 </div>
                                 <a
                                     class="to-blog"
-                                    v-bind:href="'https://blog.serpent-jp.com/author/' + item.name"
-                                >{{item.name}} の書いたブログ記事を見る</a>
+                                    v-bind:href="
+                                        'https://blog.serpent-jp.com/author/' +
+                                        item.name
+                                    "
+                                    >{{ item.name }} の書いたブログ記事を見る</a
+                                >
                             </div>
                         </div>
                     </div>
@@ -256,7 +297,7 @@ export default {
     min-width: 0;
     width: 90%;
 }
-.icon-outer {
+.icon-outer-pc {
     max-width: 300px;
     max-height: 300px;
     min-width: 300px;
@@ -316,6 +357,9 @@ export default {
     width: 20px;
     fill: white;
 }
+/* .name-box {
+    display: flex;
+} */
 .name {
     font-weight: bold;
     font-size: 25px;
@@ -430,5 +474,73 @@ export default {
         0 3px 1px -1px rgba(0, 0, 0, 0.2);
     text-decoration: none;
     color: black;
+}
+.icon-outer-mobile {
+    display: none;
+}
+.hr {
+    display: block;
+}
+@media (max-width: 1000px) {
+    .member-outer {
+        padding: 0 2%;
+    }
+    .member-title {
+        text-align: center;
+        margin: 50px 0;
+        font-size: 30px;
+        font-family: "Domine", serif;
+    }
+    .icon-outer-pc {
+        display: none;
+    }
+    .author-box {
+        flex-direction: column;
+    }
+    .btn {
+        font-size: 12px;
+    }
+    ul {
+        padding: 0;
+    }
+    .to-blog {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+        max-width: 500px;
+    }
+    .btn-svg {
+        width: 15px;
+    }
+    .meta-box {
+        text-align: center;
+    }
+    .meta-box-inner {
+        justify-content: space-around;
+    }
+    .icon {
+        box-shadow: none;
+    }
+    .icon-outer-mobile {
+        display: block;
+        max-width: 60px;
+        max-height: 60px;
+        min-width: 60px;
+        min-height: 60px;
+    }
+    .name-box {
+        display: flex;
+        margin-bottom: 10px;
+    }
+    .role {
+        position: relative;
+        height: min-content;
+    }
+    .name {
+        height: min-content;
+    }
+    .hr {
+        display: none;
+    }
 }
 </style>
