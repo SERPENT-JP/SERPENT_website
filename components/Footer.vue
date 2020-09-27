@@ -147,4 +147,27 @@ li {
     font-family: "Domine", serif;
     width: 200px;
 }
+@media (max-width: 1100px) {
+    .page-footer {
+        padding: 30px;
+    }
+}
+@media (max-width: 700px) {
+    .page-footer {
+        padding: 10px;
+    }
+    .footer-meta-box {
+        position: initial;
+    }
+    .site-map {
+        position: initial;
+    }
+    .page-footer {
+        height: auto;
+    }
+    .site-map-left,
+    .site-map-right {
+        width: 170px;
+    }
+}
 </style>
