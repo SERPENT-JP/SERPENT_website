@@ -1,7 +1,11 @@
 <template>
     <div class="index-outer wrapper">
         <div class="index-left">
-            <img class="index-img" src="~/assets/images/index-img.svg" alt="SERPENTイメージ" />
+            <img
+                class="index-img"
+                src="~/assets/images/index-img.svg"
+                alt="SERPENTイメージ"
+            />
         </div>
         <div class="index-right">
             <div class="index-message">
@@ -11,7 +15,11 @@
             </div>
             <a class="to-about" href="/about/">
                 to About
-                <img class="to-about-img" src="~/assets/images/next.svg" alt="toAbout" />
+                <img
+                    class="to-about-img"
+                    src="~/assets/images/next.svg"
+                    alt="toAbout"
+                />
             </a>
         </div>
     </div>
@@ -79,8 +87,7 @@
     background-color: rgb(125, 215, 231);
     color: black;
     text-decoration: none;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-        5px 5px 5px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 5px 5px 5px rgba(0, 0, 0, 0.22);
 }
 .to-about-img {
     position: absolute;
@@ -88,5 +95,20 @@
     top: 0;
     width: 40px;
     margin: 15px;
+}
+@media (max-width: 1000px) {
+    .index-left {
+        display: none;
+    }
+    .index-right {
+        width: 100%;
+    }
+    .index-message > h1 {
+        font-size: 50px;
+        font-family: "Domine", serif;
+    }
+    .index-message > h2 {
+        font-size: 30px;
+    }
 }
 </style>
